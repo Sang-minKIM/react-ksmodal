@@ -16,8 +16,7 @@ npm install react-ksmodal
 ### Single Modal
 
 ```jsx live
-import { createKsmodal } from "./createKsmodal";
-import { useModal } from "./useModal";
+import { createKsmodal, useModal } from "react-ksmodal";
 
 function App() {
     const Modal = createKsmodal();
@@ -49,8 +48,7 @@ You can specify different names and settings for each modal.
    Give a clear name to each modal. This name is used to reference that specific modal.
 
 ```jsx live
-import { createKsmodal } from "./createKsmodal";
-import { useModal } from "./useModal";
+import { createKsmodal, useModal } from "react-ksmodal";
 
 function App() {
     const Modal = createKsmodal();
