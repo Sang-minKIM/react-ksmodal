@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./ksmodal.css";
+import styles from "./ksmodal.module.css";
 import { KsmodalProps } from "./types";
 
 export default function Ksmodal({ isVisible, duration, message, color = "#ffffff", backgroundColor = "#000000", radius = 0, width = "max-content", height = "max-content", bottom = "10%", left = "50%" }: KsmodalProps) {
@@ -16,7 +16,7 @@ export default function Ksmodal({ isVisible, duration, message, color = "#ffffff
 
     return (
         <div
-            className={`custom-message ${isVisible ? "fade-enter" : "fade-exit"}`}
+            className={`${styles["custom-message"]} ${isVisible ? styles["fade-enter"] : styles["fade-exit"]}`}
             style={{
                 display: isRendered ? "block" : "none",
                 backgroundColor,
