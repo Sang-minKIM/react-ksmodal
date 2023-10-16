@@ -8,7 +8,8 @@
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true
+        "declaration": true
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "types": ["node", "react", "react-dom"]
 }
