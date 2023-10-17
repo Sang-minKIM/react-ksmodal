@@ -1,5 +1,8 @@
 <div align="center">
   <h1>react-ksmodal</h1>
+  <p align="center">
+    <img src="https://github.com/Sang-minKIM/react-ksmodal/assets/87116017/4b37fbc5-261a-46b9-b1f8-3ce6a97985ba" />
+  </p>
   <p>"<b>React-ksmodal</b> is a versatile <b>React component library</b> for creating <b>customizable modal messages</b> with support for animations, various display options, and TypeScript compatibility."
 
 </p>
