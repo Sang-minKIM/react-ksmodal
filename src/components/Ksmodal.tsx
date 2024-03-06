@@ -6,12 +6,15 @@ export default function Ksmodal({ isVisible, duration, message, color = "#ffffff
     const [isRendered, setRendered] = useState(isVisible);
 
     useEffect(() => {
-        if (isVisible) {
-            setRendered(true);
-            setTimeout(() => {
-                setRendered(false);
-            }, duration + 500);
+        if (!isVisible) {
+            return;
         }
+        setRendered(true);
+        const timer = setTimeout(() => {
+            setRendered(false);
+        }, duration + 500);
+
+        return () => clearTimeout(timer);
     }, [isVisible, duration]);
 
     return (
