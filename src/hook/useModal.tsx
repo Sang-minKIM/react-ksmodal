@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface useModalHook {
     isVisible: boolean;
@@ -7,14 +7,22 @@ interface useModalHook {
 
 export function useModal(): useModalHook {
     const [isVisible, setIsVisible] = useState(false);
+    const timerId = useRef<NodeJS.Timeout | null>(null);
 
     const showModal = (duration: number) => {
         setIsVisible(true);
-
-        setTimeout(() => {
+        if (timerId.current) clearTimeout(timerId.current);
+        timerId.current = setTimeout(() => {
             setIsVisible(false);
+            timerId.current = null;
         }, duration);
     };
+
+    useEffect(() => {
+        return () => {
+            if (timerId.current) clearTimeout(timerId.current);
+        };
+    }, []);
 
     return { isVisible, showModal };
 }
